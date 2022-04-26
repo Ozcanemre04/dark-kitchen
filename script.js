@@ -1,39 +1,65 @@
 const plats = [
-    {   img :"",
-        nom:"Salade de pâtes vegan",
+    {   img :"./img/soupevegetarien.jpg",
+        nom:"CRÈME DE BROCOLI ET POIREAUX",
         genre:"végétarien",
-        plat:"chaud",
-        type:"plat",
+        chaleur:"chaud",
+        type:"soupe",
+        prix:10 +"$" ,
+
     },
-    {   img :"",
-    nom:"Salade de pâtes vegan",
-    genre:"végétarien",
-    plat:"chaud",
-    type:"plat",
+    {   img :"./img/soupeboeuf.jpg",
+    nom:"SOUPE DE LÉGUMES AU BOEUF",
+    genre:"normal",
+    chaleur:"chaud",
+    type:"soupe",
+    prix:12+"$",
+
 },
-{   img :"",
-nom:"Salade de pâtes vegan",
+{   img :"./img/tartefinebrocoli.jpg",
+nom:"Tarte fine au brocoli et gorgonzola",
 genre:"végétarien",
-plat:"froid",
+chaleur:"chaud",
 type:"plat",
+prix:200 + "$",
+
 },
-{   img :"",
-nom:"Salade de pâtes vegan",
-genre:"végétarien",
-plat:"chaud",
+{   img :"./img/Epaule-d-agneau.jpg",
+nom:"Épaule d'agneau entière rôtie au four",
+genre:"normal",
+chaleur:"chaud",
 type:"plat",
+prix:500+"$",
+
 },
-{   img :"",
-nom:"Salade de pâtes vegan",
-genre:"végétarien",
-plat:"chaud",
-type:"plat",
+{   img :"./img/ananas-roti-au-miel.jpg",
+nom:"Ananas rôti au miel",
+genre:"normal",
+chaleur:"chaud",
+type:"dessert",
+prix:10000+"$",
+
 },
-{   img :"",
-nom:"hello",
-genre:"végétarien",
-plat:"chaud",
-type:"plat",
+{   img :"./img/tiramisu.jpg",
+
+nom:"Tiramusu",
+genre:"normal",
+chaleur:"froid",
+type:"dessert",
+prix:100+"$",
+},
+{   img :"./img/café.jpg",
+nom:"Café",
+genre:"normal",
+chaleur:"chaud",
+type:"boisson",
+prix:100+"$",
+},
+{   img :"./img/pasteque.jpg",
+nom:"Smoothie à la pastèque",
+genre:"normal",
+chaleur:"froid",
+type:"boisson",
+prix:100+"$",
 },
 ]
 
@@ -49,7 +75,7 @@ function display(array){
      article.appendChild(figure)
      let img = document.createElement('img')
      figure.appendChild(img)
-     img.innerHTML=array[i].img
+     img.src=array[i].img
  let figcaption = document.createElement("figcaption")
  figure.appendChild(figcaption)
  figcaption.innerHTML=array[i].type;
@@ -58,13 +84,20 @@ function display(array){
 let h2 = document.createElement('h2')
 section.appendChild(h2)
 h2.innerHTML=array[i].nom
+let p = document.createElement('p')
+
+
+section.appendChild(p)
+
+
+p.innerHTML=array[i].prix
 let footer = document.createElement('footer')
 article.appendChild(footer)
 let h31 = document.createElement("h3")
 let h32 = document.createElement("h3")
 footer.appendChild(h31)
 footer.appendChild(h32)
-h31.innerHTML=array[i].plat
+h31.innerHTML=array[i].chaleur
 h32.innerHTML=array[i].genre
     }
 }
@@ -76,10 +109,45 @@ let input =document.querySelector('#input')
 
 input.addEventListener('keyup' ,function(e){
     const lower = e.target.value.toLowerCase()
-    const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
+    const result = plats.filter(plat => plat.genre.toLocaleLowerCase().startsWith(lower));
     display(result)
 
 })
 
 
 let select = document.querySelector('#select')
+
+select.addEventListener('change',function(){
+    let valeur= select.value
+    if(valeur==="genre"){
+        input.addEventListener('keyup' ,function(e){
+            const lower = e.target.value.toLowerCase()
+            const result = plats.filter(plat => plat.genre.toLocaleLowerCase().startsWith(lower));
+            display(result)
+        
+        })
+    }
+    else if(valeur==="type"){
+        input.addEventListener('keyup' ,function(e){
+            const lower = e.target.value.toLowerCase()
+            const result = plats.filter(plat => plat.type.toLocaleLowerCase().startsWith(lower));
+            display(result)
+        
+        })
+    }
+    else if(valeur==="chaleur"){
+    input.addEventListener('keyup' ,function(e){
+        const lower = e.target.value.toLowerCase()
+        const result = plats.filter(plat => plat.chaleur.toLocaleLowerCase().startsWith(lower));
+        display(result)
+    
+    })
+}
+else{input.addEventListener('keyup' ,function(e){
+    const lower = e.target.value.toLowerCase()
+    const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
+    display(result)
+
+})}
+})
+
