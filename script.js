@@ -14,7 +14,7 @@ const plats = [
 {   img :"",
 nom:"Salade de pâtes vegan",
 genre:"végétarien",
-plat:"chaud",
+plat:"froid",
 type:"plat",
 },
 {   img :"",
@@ -30,7 +30,7 @@ plat:"chaud",
 type:"plat",
 },
 {   img :"",
-nom:"Salade de pâtes vegan",
+nom:"hello",
 genre:"végétarien",
 plat:"chaud",
 type:"plat",
@@ -41,6 +41,7 @@ let main = document.createElement('main')
 let body= document.querySelector('body')
 body.appendChild(main)
 function display(array){
+    main.innerHTML='';
     for(let i = 0;i<array.length;i++){
      let article = document.createElement('article')
      main.appendChild(article)
@@ -69,3 +70,16 @@ h32.innerHTML=array[i].genre
 }
 
 display(plats)
+
+
+let input =document.querySelector('#input')
+
+input.addEventListener('keyup' ,function(e){
+    const lower = e.target.value.toLowerCase()
+    const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
+    display(result)
+
+})
+
+
+let select = document.querySelector('#select')

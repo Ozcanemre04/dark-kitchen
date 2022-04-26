@@ -9,12 +9,12 @@ main>article{
     flex-direction: column;
     background-color: aqua;
     justify-content: space-between;
+    height: 500px;
     
 }
-body{
-    overflow-x: hidden;
-}
+
 article>footer{
     display: flex;
     justify-content: space-between;
 }
+
