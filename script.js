@@ -4,7 +4,8 @@ const plats = [
         genre:"végétarien",
         chaleur:"chaud",
         type:"soupe",
-        prix:10 +"$" ,
+        prix:10 +"$",
+        icon:"./img/coffee-cup.png"
 
     },
     {   img :"./img/soupeboeuf.jpg",
@@ -13,6 +14,7 @@ const plats = [
     chaleur:"chaud",
     type:"soupe",
     prix:12+"$",
+    icon:"./img/coffee-cup.png"
 
 },
 {   img :"./img/tartefinebrocoli.jpg",
@@ -21,6 +23,7 @@ genre:"végétarien",
 chaleur:"chaud",
 type:"plat",
 prix:200 + "$",
+icon:"./img/coffee-cup.png"
 
 },
 {   img :"./img/Epaule-d-agneau.jpg",
@@ -29,6 +32,7 @@ genre:"normal",
 chaleur:"chaud",
 type:"plat",
 prix:500+"$",
+icon:"./img/coffee-cup.png"
 
 },
 {   img :"./img/ananas-roti-au-miel.jpg",
@@ -37,6 +41,7 @@ genre:"normal",
 chaleur:"chaud",
 type:"dessert",
 prix:10000+"$",
+icon:"./img/coffee-cup.png"
 
 },
 {   img :"./img/tiramisu.jpg",
@@ -46,6 +51,7 @@ genre:"normal",
 chaleur:"froid",
 type:"dessert",
 prix:100+"$",
+icon:"./img/snowflake.png"
 },
 {   img :"./img/café.jpg",
 nom:"Café",
@@ -53,6 +59,7 @@ genre:"normal",
 chaleur:"chaud",
 type:"boisson",
 prix:100+"$",
+icon:"./img/coffee-cup.png"
 },
 {   img :"./img/pasteque.jpg",
 nom:"Smoothie à la pastèque",
@@ -60,6 +67,7 @@ genre:"normal",
 chaleur:"froid",
 type:"boisson",
 prix:100+"$",
+icon:"./img/snowflake.png"
 },
 ]
 
@@ -95,7 +103,13 @@ let footer = document.createElement('footer')
 article.appendChild(footer)
 let h31 = document.createElement("h3")
 let h32 = document.createElement("h3")
-footer.appendChild(h31)
+let div = document.createElement('div')
+div.className="icon"
+footer.appendChild(div)
+let img2=document.createElement('img')
+div.appendChild(img2)
+img2.src=array[i].icon
+div.appendChild(h31)
 footer.appendChild(h32)
 h31.innerHTML=array[i].chaleur
 h32.innerHTML=array[i].genre
@@ -150,4 +164,3 @@ else{input.addEventListener('keyup' ,function(e){
 
 })}
 })
-

@@ -27,9 +27,25 @@ main>article{
     
 }
 
+.icon{
+    display: flex;
+
+}
+
+
+.icon>img{
+    width: 60px;
+    height: 60px;
+}
+.icon>h3{
+    display: none;
+}
 article>footer{
     display: flex;
     justify-content: space-between;
+}
+article>footer>h3{
+    align-self: flex-end;
 }
 article>section{
     background-color:rgba(159, 157, 157, 0.081);
