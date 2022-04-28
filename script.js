@@ -185,3 +185,31 @@ select.addEventListener('change', function () {
         })
     }
 })
+let aside = document.querySelector('aside')
+
+let shoppingCard=document.querySelector('.shopping-card')
+
+let close =document.querySelector('.close')
+
+
+shoppingCard.addEventListener('click',function(){
+    aside.classList.toggle('active')
+    if(aside.classList.contains('active')){
+    aside.style.display='flex'}
+    else{
+        aside.style.display='none'
+    }
+    
+})
+
+
+close.addEventListener('click', function(){
+    aside.classList.remove('active')
+    if(!aside.classList.contains('active')){
+        aside.style.display='none'
+    }
+})
+
+
+
+
