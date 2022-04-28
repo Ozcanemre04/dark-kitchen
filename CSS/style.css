@@ -1,0 +1,184 @@
+*{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow , Arial, sans-serif';
+    margin:  0;
+    padding: 0;
+    background-image: url(/img/);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+.menuheader{
+    display:flex;  
+    margin: 0;
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: #333;
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Times New Roman, Times, serif';
+}
+
+.titleLogo{
+    color: #fff;
+    text-decoration: none;
+    background-color: #3399FF;
+    font-size:30px;
+    letter-spacing: 2px;
+}
+
+.spanContainer{
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    height: auto;
+    width: 100vw;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-content{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-family: "sans-serif";
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.social-Media{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0 ;
+
+}
+.social-Media li{
+    margin: 0 10px; 
+
+}
+
+.social-Media a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-Media a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}   
+
+.social-Media a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    margin:0;
+    padding:0;
+    background-color: #111;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-bottom p{
+    font-size: 25px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    
+}
+
+.contact-detaills{
+    display: flex;
+    position: absolute;
+    left: 69%;
+    top: 30%;
+    flex-direction: column;
+}
+
+input{
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5%;
+    width: 90%;
+    height: 30px;
+    outline: none;
+    bordeR: none;
+}
+
+.btn{
+    margin-top: 0;
+    width: 150px;
+    background-color: #aaa;
+    color: #fff;
+    border-radius: 5%;
+    cursor: pointer;
+    outline:  none;
+    border: none;
+}
+
+.btn i{
+    font-size:35px;
+}
+.news{
+    font-size:20px;
+    font-family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif';
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    margin: 0;
+}
+.hello{
+    display: flex;
+}
+
+.toggle-switch-mode{
+    border-radius: 30px;
+    outline:  none;
+    border: none;
+    cursor: pointer;
+    width:10%;
+    text-transform:uppercase;
+    flex-direction: row-reverse;
+}
+
+button{
+    border-radius: 10px;
+    outline:  none;
+    border: none;
+    width:5%;
+    cursor: pointer;
+    text-transform:capitalize;
+    font-size:20px;
+    background-color: #fff;
+}
+.dark{
+    background-color:hsl(217,54%,11%);
+    color: #fff;
+    
+}
+
