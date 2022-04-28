@@ -195,7 +195,9 @@ let close =document.querySelector('.close')
 shoppingCard.addEventListener('click',function(){
     aside.classList.toggle('active')
     if(aside.classList.contains('active')){
-    aside.style.display='flex'}
+    aside.style.display='flex';
+    
+}
     else{
         aside.style.display='none'
     }
@@ -210,6 +212,29 @@ close.addEventListener('click', function(){
     }
 })
 
+let arr =[];
 
 
+let ii = document.querySelectorAll('.image')
 
+for(let i=0;i<ii.length;i++){
+aside.innerHTML='',
+    ii[i].addEventListener('click', function(){
+        arr.push(plats[i])
+        let nndiv =document.createElement('div')
+        aside.appendChild(nndiv)
+      let pic = document.createElement('img')
+      nndiv.appendChild(pic)
+      pic.className="pic"
+      
+      pic.src  =plats[i].img
+       let h222 =document.createElement('h2')
+       nndiv.appendChild(h222) 
+        h222.innerHTML=plats[i].nom 
+        let ppp = document.createElement('p')
+        nndiv.appendChild(ppp)
+        ppp.innerHTML=plats[i].prix
+console.log(aside);
+    })
+}
+   
