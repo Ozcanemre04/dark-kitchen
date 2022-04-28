@@ -192,6 +192,7 @@ let shoppingCard=document.querySelector('.shopping-card')
 let close =document.querySelector('.close')
 
 
+
 shoppingCard.addEventListener('click',function(){
     aside.classList.toggle('active')
     if(aside.classList.contains('active')){
@@ -216,12 +217,17 @@ let arr =[];
 
 
 let ii = document.querySelectorAll('.image')
+console.log(ii);
+
 
 for(let i=0;i<ii.length;i++){
-aside.innerHTML='',
-    ii[i].addEventListener('click', function(){
+
+
+    ii[i].addEventListener('click',function(){
+    
         arr.push(plats[i])
         let nndiv =document.createElement('div')
+        nndiv.className ="hellow"
         aside.appendChild(nndiv)
       let pic = document.createElement('img')
       nndiv.appendChild(pic)
@@ -234,7 +240,21 @@ aside.innerHTML='',
         let ppp = document.createElement('p')
         nndiv.appendChild(ppp)
         ppp.innerHTML=plats[i].prix
-console.log(aside);
-    })
-}
-   
+  let iicon = document.createElement('button')
+  nndiv.appendChild(iicon)
+  iicon.innerHTML="delete";
+  iicon.classList='delete';
+  console.log(iicon);
+iicon.addEventListener('click',function(){
+ nndiv.remove()
+
+ 
+})
+let dellleted = document.querySelector('.delete-All')
+dellleted.addEventListener('click',function(){
+ 
+     nndiv.remove()
+})
+})}
+
+
