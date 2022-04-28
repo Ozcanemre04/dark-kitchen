@@ -185,5 +185,3 @@ select.addEventListener('change', function () {
         })
     }
 })
-
- 
