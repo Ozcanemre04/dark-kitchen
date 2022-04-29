@@ -1,28 +1,31 @@
-const button =  document.getElementById('toggleModeChange')
-const body = document.querySelector('body')
+const buttonn =  document.querySelector('#toggleModeChange')
+const bodyy = document.querySelector('body')
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
-
+const coontent = document.querySelector('.content')
 const inputNewsletter = document.getElementById('sendEmail')
 
-function toggleDarkMode(){
-    if(body.classList.contains('dark')){
-        body.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-        button.innerHTML = "Turn on dark mode"
+buttonn.addEventListener("click",function(){
+    coontent.classList.toggle('dark')
+    buttonn.classList.toggle('dark')
+    if(coontent.classList.contains('dark')){
+        
+        
+        buttonn.innerHTML = "Turn on dark mode"
     }else{
-        body.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-        button.innerHTML =  "Turn off dark mode"
+        
+        
+        buttonn.innerHTML =  "Turn off dark mode"
     }
-}
+
+})
 
 if(localStorage.getItem('theme') === 'dark'){
-    body.classList.add('dark')
-    button.innerHTML = "Turn off dark mode"
+    coontent.classList.add('dark')
+    buttonn.innerHTML = "Turn off dark mode"
 }
 
-document.getElementById("toggleModeChange").addEventListener("click",toggleDarkMode)
+
 
 
 

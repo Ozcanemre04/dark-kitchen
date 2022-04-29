@@ -11,8 +11,9 @@
 
 
 
-body .dark{
-    background-color: hsla(217,54%,11%)
+ .dark{
+    background-color:black;
+    color: white;
 }
 .menuheader{
     display:flex;  
@@ -25,10 +26,7 @@ body .dark{
     font-family: 'Times New Roman, Times, serif';
 }
 
-body .dark button{
-    background-color: hsl(217, 54%, 11%);
-    color: #fff;
-}
+
 .titleLogo{
     color: #fff;
     text-decoration: none;
