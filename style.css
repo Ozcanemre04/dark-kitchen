@@ -234,8 +234,9 @@ aside>div{
     color: wheat;
     border-radius: 10px;
     box-shadow: 1px 1px 5px white;
-    width: 50px;
+    width: 70px;
     padding: 5px;
+    font-size:medium;
 }
 .delete:hover{
     text-shadow: 1px 1px 5px white;

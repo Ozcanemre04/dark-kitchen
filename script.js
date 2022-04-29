@@ -211,6 +211,7 @@ function display(array) {
                 const result = plats.filter(plat => plat.type.toLocaleLowerCase().startsWith(lower));
                 display(result)
                 
+                
 
             })
         } else if (valeur === "froid") {
@@ -248,6 +249,7 @@ function display(array) {
                 const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
 
                 display(result)
+                
 
 
             })

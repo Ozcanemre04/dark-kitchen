@@ -7,14 +7,14 @@ const inputNewsletter = document.getElementById('sendEmail')
 
 buttonn.addEventListener("click",function(){
     coontent.classList.toggle('dark')
-    buttonn.classList.toggle('dark')
+    
     if(coontent.classList.contains('dark')){
-        
+    buttonn.style.backgroundColor="wheat"    
         
         buttonn.innerHTML = "Turn on dark mode"
     }else{
         
-        
+        buttonn.style.backgroundColor="black"
         buttonn.innerHTML =  "Turn off dark mode"
     }
 
