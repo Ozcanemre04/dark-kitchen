@@ -180,7 +180,7 @@ function display(array) {
 
     let input = document.querySelector('#input')
 
-    input.addEventListener('keyup', function (e) {
+   input.addEventListener('keyup', function (e) {
         const lower = e.target.value.toLowerCase()
         const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
         display(result)
@@ -202,13 +202,15 @@ function display(array) {
                     select.style.backgroundColor='green'
                     input.style.backgroundColor="green"
                 })
-
+               
+               
         
         } else if (valeur === "type") {
             input.addEventListener('keyup', function (e) {
                 const lower = e.target.value.toLowerCase()
                 const result = plats.filter(plat => plat.type.toLocaleLowerCase().startsWith(lower));
                 display(result)
+                
 
             })
         } else if (valeur === "froid") {
@@ -221,12 +223,19 @@ function display(array) {
                 select.addEventListener('click',function(){
                     select.style.backgroundColor='blue'
                     input.style.backgroundColor="blue"
+                    input.addEventListener('keyup', function (e) {
+                        const lower = e.target.value.toLowerCase()
+                        const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
+                        display(result)
+                        
+        
+                    })
                 })
             
         }
         else if(valeur==="chaud"){
             const result = plats.filter(plat => plat.chaleur ==="chaud")
-                console.log(result);;
+                console.log(result);
                 display(result)
                 select.addEventListener('click',function(){
                     select.style.backgroundColor='red'
