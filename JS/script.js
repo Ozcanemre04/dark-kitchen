@@ -2,6 +2,7 @@ const button =  document.getElementById('toggleModeChange')
 const body = document.querySelector('body')
 const header = document.querySelector('header')
 const footer = document.querySelector('footer')
+
 const inputNewsletter = document.getElementById('sendEmail')
 
 function toggleDarkMode(){
