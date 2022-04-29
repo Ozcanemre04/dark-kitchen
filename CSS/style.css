@@ -3,7 +3,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow , Arial, sans-serif';
     margin:  0;
     padding: 0;
-    background-image: url(/img/);
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -13,6 +12,11 @@
 body {
     height: 100vh;
     width: 100%;
+    background-color: #fff;
+}
+
+body .dark{
+    background-color: hsla(217,54%,11%)
 }
 .menuheader{
     display:flex;  
@@ -25,6 +29,10 @@ body {
     font-family: 'Times New Roman, Times, serif';
 }
 
+body .dark button{
+    background-color: hsl(217, 54%, 11%);
+    color: #fff;
+}
 .titleLogo{
     color: #fff;
     text-decoration: none;
@@ -174,11 +182,14 @@ button{
     cursor: pointer;
     text-transform:capitalize;
     font-size:20px;
-    background-color: #fff;
-}
-.dark{
-    background-color:hsl(217,54%,11%);
+    background-color: #000000;
     color: #fff;
-    
+    width: 10%;
+    padding: 10px;
 }
 
+
+button .fa-eclipse{
+    background-color: #0000;
+    
+}

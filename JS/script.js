@@ -1,10 +1,42 @@
-let switchMode =  document.querySelector('button')
-let body = document.querySelector('body')
-let header = document.querySelector('header')
-let footer = document.querySelector('footer')
-let inputNewsletter = document.getElementById('sendEmail')
+const button =  document.getElementById('toggleModeChange')
+const body = document.querySelector('body')
+const header = document.querySelector('header')
+const footer = document.querySelector('footer')
+const inputNewsletter = document.getElementById('sendEmail')
 
-switchMode.addEventListener('click',function() {
+function toggleDarkMode(){
+    if(body.classList.contains('dark')){
+        body.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+        button.innerHTML = "Turn on dark mode"
+    }else{
+        body.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+        button.innerHTML =  "Turn off dark mode"
+    }
+}
+
+if(localStorage.getItem('theme') === 'dark'){
+    body.classList.add('dark')
+    button.innerHTML = "Turn off dark mode"
+}
+
+document.getElementById("toggleModeChange").addEventListener("click",toggleDarkMode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*switchMode.addEventListener('click',function() {
     switchMode.classList.toggle('dark')
     body.classList.toggle('dark')
     header.classList.toggle('dark')
@@ -19,4 +51,4 @@ switchMode.addEventListener('click',function() {
         footer.style.backgroundColor = "#333"
         inputNewsletter.style.backgroundColor = "#000"
     }
-})
+})*/
