@@ -5,15 +5,11 @@
     padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
-body {
-    height: 100vh;
-    width: 100%;
-    background-color: #fff;
-}
+
 
 body .dark{
     background-color: hsla(217,54%,11%)
@@ -47,11 +43,8 @@ body .dark button{
     text-decoration: none;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.footer{
+   margin-top: 10px;
     background-color: #333;
     height: auto;
     width: 100vw;
@@ -122,13 +115,11 @@ footer{
 
 .contact-detaills{
     display: flex;
-    position: absolute;
-    left: 69%;
-    top: 30%;
+    
     flex-direction: column;
 }
 
-input{
+#sendEmail{
     padding: 10px;
     background-color: #000000;
     color: #fff;
@@ -160,7 +151,7 @@ input{
     letter-spacing: 3px;
     margin: 0;
 }
-.hello{
+.mail{
     display: flex;
 }
 
@@ -174,7 +165,7 @@ input{
     flex-direction: row-reverse;
 }
 
-button{
+.darkMode{
     border-radius: 10px;
     outline:  none;
     border: none;
