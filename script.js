@@ -1,7 +1,7 @@
 const plats = [
 
     {
-        
+
         img: "./img/soupevegetarien.jpg",
         nom: "CRÈME DE BROCOLI ET POIREAUX",
         genre: "végétarien",
@@ -12,7 +12,7 @@ const plats = [
 
     },
     {
-        
+
         img: "./img/soupeboeuf.jpg",
         nom: "SOUPE DE LÉGUMES AU BOEUF",
         genre: "normal",
@@ -23,7 +23,7 @@ const plats = [
 
     },
     {
-        
+
         img: "./img/tartefinebrocoli.jpg",
         nom: "Tarte fine au brocoli et gorgonzola",
         genre: "végétarien",
@@ -34,7 +34,7 @@ const plats = [
 
     },
     {
-        
+
         img: "./img/Epaule-d-agneau.jpg",
         nom: "Épaule d'agneau entière rôtie au four",
         genre: "normal",
@@ -45,7 +45,7 @@ const plats = [
 
     },
     {
-        
+
         img: "./img/ananas-roti-au-miel.jpg",
         nom: "Ananas rôti au miel",
         genre: "normal",
@@ -56,10 +56,10 @@ const plats = [
 
     },
     {
-        
+
         img: "./img/tiramisu.jpg",
 
-        nom: "Tiramusu",
+        nom: "Tiramisu",
         genre: "normal",
         chaleur: "froid",
         type: "dessert",
@@ -67,7 +67,7 @@ const plats = [
         icon: "./img/snowflake.png"
     },
     {
-        
+
         img: "./img/café.jpg",
         nom: "Café",
         genre: "normal",
@@ -77,7 +77,7 @@ const plats = [
         icon: "./img/coffee-cup.png"
     },
     {
-        
+
         img: "./img/pasteque.jpg",
         nom: "Smoothie à la pastèque",
         genre: "normal",
@@ -97,13 +97,13 @@ function display(array) {
     main.innerHTML = '';
     for (let i = 0; i < array.length; i++) {
         let article = document.createElement('article')
-        article.className='hello'
+        article.className = 'hello'
         main.appendChild(article)
         let figure = document.createElement('figure')
         article.appendChild(figure)
         let img = document.createElement('img')
         img.classList = "image"
-        
+
         figure.appendChild(img)
         img.src = array[i].img
         let figcaption = document.createElement("figcaption")
@@ -135,126 +135,139 @@ function display(array) {
         footer.appendChild(h32)
         h31.innerHTML = array[i].chaleur
         h32.innerHTML = array[i].genre
+        
+            img.addEventListener('click', function () {
+                let arr = [];
+                console.log(array[i]);
+                arr.push(array[i])
+                let nndiv = document.createElement('div')
+                nndiv.className = "hellow"
+                aside.appendChild(nndiv)
+                let pic = document.createElement('img')
+                nndiv.appendChild(pic)
+                pic.className = "pic"
+
+                pic.src = array[i].img
+                let h222 = document.createElement('h2')
+                nndiv.appendChild(h222)
+                h222.innerHTML = array[i].nom
+                let ppp = document.createElement('p')
+                nndiv.appendChild(ppp)
+                ppp.innerHTML = array[i].prix
+                let iicon = document.createElement('button')
+                nndiv.appendChild(iicon)
+                iicon.innerHTML = "delete";
+                iicon.classList = 'delete';
+     
+                iicon.addEventListener('click', function () {
+                    nndiv.remove()
+
+
+                })
+                let dellleted = document.querySelector('.delete-All')
+                dellleted.addEventListener('click', function () {
+
+                    nndiv.remove()
+                })
+
+            })
+        
     }
 }
 
-display(plats)
+    display(plats)
 
 
-let input = document.querySelector('#input')
+    let input = document.querySelector('#input')
 
-input.addEventListener('keyup', function (e) {
-    const lower = e.target.value.toLowerCase()
-    const result = plats.filter(plat => plat.genre.toLocaleLowerCase().startsWith(lower));
-    display(result)
+    input.addEventListener('keyup', function (e) {
+        const lower = e.target.value.toLowerCase()
+        const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
+        display(result)
 
-})
-
-
-let select = document.querySelector('#select')
-
-select.addEventListener('change', function () {
-    let valeur = select.value
-    if (valeur === "genre") {
-        input.addEventListener('keyup', function (e) {
-            const lower = e.target.value.toLowerCase()
-            const result = plats.filter(plat => plat.genre.toLocaleLowerCase().startsWith(lower));
-            display(result)
-
-        })
-    } else if (valeur === "type") {
-        input.addEventListener('keyup', function (e) {
-            const lower = e.target.value.toLowerCase()
-            const result = plats.filter(plat => plat.type.toLocaleLowerCase().startsWith(lower));
-            display(result)
-
-        })
-    } else if (valeur === "chaleur") {
-        input.addEventListener('keyup', function (e) {
-            const lower = e.target.value.toLowerCase()
-            const result = plats.filter(plat => plat.chaleur.toLocaleLowerCase().startsWith(lower));
-            display(result)
-
-        })
-    } else {
-        input.addEventListener('keyup', function (e) {
-            const lower = e.target.value.toLowerCase()
-            const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
-            display(result)
-
-        })
-    }
-})
-let aside = document.querySelector('aside')
-
-let shoppingCard=document.querySelector('.shopping-card')
-
-let close =document.querySelector('.close')
+    })
 
 
+    let select = document.querySelector('#select')
 
-shoppingCard.addEventListener('click',function(){
-    aside.classList.toggle('active')
-    if(aside.classList.contains('active')){
-    aside.style.display='flex';
-    
-}
-    else{
-        aside.style.display='none'
-    }
-    
-})
+    select.addEventListener('change', function () {
+        let valeur = select.value
 
+        if (valeur === "vegan") {
+            
+                
+                const result = plats.filter(plat => plat.genre==="végétarien");
+                display(result)
+                select.addEventListener('click',function(){
+                    select.style.backgroundColor='green'
+                    input.style.backgroundColor="green"
+                })
 
-close.addEventListener('click', function(){
-    aside.classList.remove('active')
-    if(!aside.classList.contains('active')){
-        aside.style.display='none'
-    }
-})
+        
+        } else if (valeur === "type") {
+            input.addEventListener('keyup', function (e) {
+                const lower = e.target.value.toLowerCase()
+                const result = plats.filter(plat => plat.type.toLocaleLowerCase().startsWith(lower));
+                display(result)
 
-let arr =[];
+            })
+        } else if (valeur === "froid") {
+             
+             
+               
+                const result = plats.filter(plat => plat.chaleur === "froid")
+                console.log(result);;
+                display(result)
+                select.addEventListener('click',function(){
+                    select.style.backgroundColor='blue'
+                    input.style.backgroundColor="blue"
+                })
+            
+        }
+        else if(valeur==="chaud"){
+            const result = plats.filter(plat => plat.chaleur ==="chaud")
+                console.log(result);;
+                display(result)
+                select.addEventListener('click',function(){
+                    select.style.backgroundColor='red'
+                    input.style.backgroundColor='red'
+                })
+        } 
+        else {
+            input.addEventListener('keyup', function (e) {
+                const lower = e.target.value.toLowerCase()
+                const result = plats.filter(plat => plat.nom.toLocaleLowerCase().startsWith(lower));
 
-
-let ii = document.querySelectorAll('.image')
-console.log(ii);
-
-
-for(let i=0;i<ii.length;i++){
-
-
-    ii[i].addEventListener('click',function(){
-    
-        arr.push(plats[i])
-        let nndiv =document.createElement('div')
-        nndiv.className ="hellow"
-        aside.appendChild(nndiv)
-      let pic = document.createElement('img')
-      nndiv.appendChild(pic)
-      pic.className="pic"
-      
-      pic.src  =plats[i].img
-       let h222 =document.createElement('h2')
-       nndiv.appendChild(h222) 
-        h222.innerHTML=plats[i].nom 
-        let ppp = document.createElement('p')
-        nndiv.appendChild(ppp)
-        ppp.innerHTML=plats[i].prix
-  let iicon = document.createElement('button')
-  nndiv.appendChild(iicon)
-  iicon.innerHTML="delete";
-  iicon.classList='delete';
-  console.log(iicon);
-iicon.addEventListener('click',function(){
- nndiv.remove()
-
- 
-})
-let dellleted = document.querySelector('.delete-All')
-dellleted.addEventListener('click',function(){
- 
-     nndiv.remove()
-})
-})}
+                display(result)
 
 
+            })
+        }
+    })
+   
+    let aside = document.querySelector('aside')
+
+    let shoppingCard = document.querySelector('.shopping-card')
+
+    let close = document.querySelector('.close')
+
+
+
+    shoppingCard.addEventListener('click', function () {
+        aside.classList.toggle('active')
+        if (aside.classList.contains('active')) {
+            aside.style.display = 'flex';
+
+        } else {
+            aside.style.display = 'none'
+        }
+
+    })
+
+
+    close.addEventListener('click', function () {
+        aside.classList.remove('active')
+        if (!aside.classList.contains('active')) {
+            aside.style.display = 'none'
+        }
+    })
