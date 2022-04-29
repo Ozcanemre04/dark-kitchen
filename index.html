@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,38 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/40a1b9df1e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header class="menuheader">
-        
-        <nav class="navbar" id="menuNavbar">
-            <span><a href="index.html" class="titleLogo">Home</a></span>
-        </nav>
-            <span><a href="#" class="spanContainer">Login</a></span>
-            <span><a href="#" class="spanContainer">Registration</a></span>
-            <button class="darkMode" id="toggleModeChange">Turn on dark mode</button>                                       
-    </header>
-    <footer>
-        <div class="footer-content">
-            <h3>Navigation Footer</h3>
-            <ul class="social-Media">
-                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>  
-        </div>
-        <div class="contact-detaills">
-            <h2 class="news">newsletter</h2>
-            <div class="hello">
-            <input type="email" placeholder="Subscribe to our newsletter" id="sendEmail"> 
-            <button type="submit" class="btn" id="btn"><i class="fa-solid fa-bell"></i></button>
-        </div>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;  2022 BecodeProject.  dark kitchen  <span></span></p>
-        </div>
-    </footer>
-    <script type="text/javascript" src="/JS/script.js"></script>
-</body>
-</html> 
 
+<body>
+
+    <section>
+        <img src="./img/icons8-shopping-cart-promotion-96.png" alt="" class="shopping-card">
+    <input type="text" name="" id="input" placeholder="search anything">
+    <select name="" id="select">
+        <option value="nom" title="name of dishes">nom</option>
+        <option value="vegan">vegetarien</option>
+        <option value="type" title="écrivez: soupe, plat,boisson ou dessert">type</option>
+        <option value="froid">froid</option>
+        <option value="chaud">chaud</option>
+
+    </select>
+    
+    </section>
+    <section class="content">
+       <aside>
+           <div>
+           <img src="./img/close.png" alt="" class="close">
+           <h2>shopping-card</h2>
+           <h2>nom</h2>
+           <h2>prix</h2>
+           </div>
+           <button class="delete-All">delete-All</button>
+        </aside>
+           
+    </section>
+</body>
+
+</html>
